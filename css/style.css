@@ -35,7 +35,6 @@ body {
     flex-direction: column;
 }
 
-/* Example: Swapping to Outfit */
 h1, h2, h3, .logo h1 {
     font-family: 'Outfit', 'Inter', system-ui, sans-serif;
     letter-spacing: -0.02em;
@@ -56,7 +55,6 @@ header {
     padding: 1rem 0;
 }
 
-/* Updated Header Layout: Full width to push Logo far-left and Nav far-right */
 .container {
     width: 100%;
     max-width: 100%;
@@ -224,7 +222,7 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
 /* Feature Blocks (Index / Home) */
 .feature-block {
     display: flex;
-    align-items: flex-start; /* Aligns content (text and image) to the top */
+    align-items: flex-start;
     gap: 3rem;
     padding: 2.5rem;
     background: var(--card-bg);
@@ -243,13 +241,13 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Keeps text stacked starting from the top */
+    justify-content: flex-start;
 }
 
 .feature-text h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    margin-top: 0; /* Ensures no extra top whitespace pushes the heading down */
+    margin-top: 0;
 }
 
 .feature-text p {
@@ -259,7 +257,7 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
 
 /* Sized-Down Image Container with Fixed Aspect Ratio */
 .feature-image-container {
-    flex: 0 0 320px; /* Maintains the compact width */
+    flex: 0 0 320px;
     max-width: 100%;
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -267,8 +265,8 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
 
 .feature-image {
     width: 100%;
-    aspect-ratio: 4 / 3; /* Forces a fixed 4:3 aspect ratio */
-    object-fit: cover;    /* Prevents stretching by cleanly cropping overflowing edges */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     border-radius: var(--radius-md);
     display: block;
 }
@@ -287,7 +285,6 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover glow matching the main feature blocks */
 .stats-feature:hover {
     border-color: rgba(0, 123, 255, 0.4);
     box-shadow: 0 8px 24px rgba(0, 123, 255, 0.15);
@@ -412,15 +409,7 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
     line-height: 1.4;
 }
 
-/* Contact Social Grid - Big Icons with Modern Polish */
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
-}
-
-/* Contact Social Grid - Restored Original Layout */
+/* Contact Social Grid */
 .social-grid {
     display: flex;
     justify-content: center;
@@ -441,14 +430,10 @@ nav a:hover::after, nav a:focus-visible::after, nav a.active::after {
 .social-card img {
     width: 240px;
     height: 240px;
-    object-fit: cover; /* Changed from contain to cover so image fills rounded boundary completely */
-    border-radius: 20px; /* Applies rounded corners to all images */
-    overflow: hidden; /* Forces child content/backgrounds to trim inside the radius */
+    object-fit: cover;
+    border-radius: 20px;
+    overflow: hidden;
     transition: transform 0.2s ease;
-}
-
-.social-card img:hover {
-    transform: scale(1.05);
 }
 
 .social-card img:hover {
@@ -471,7 +456,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsiveness */
+/* Responsiveness & Mobile Adjustments */
 @media (max-width: 868px) {
     .container {
         padding: 0 1.5rem;
@@ -487,9 +472,27 @@ footer {
         width: auto;
     }
 
+    /* Center feature blocks, text, and scale images on mobile */
     .feature-block {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         gap: 1.5rem;
+    }
+
+    .feature-text {
+        align-items: center;
+    }
+
+    .feature-image-container {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .feature-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
 }
